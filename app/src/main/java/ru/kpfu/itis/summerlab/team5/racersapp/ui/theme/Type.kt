@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team5.shopapp.ui.theme
+package ru.kpfu.itis.summerlab.team5.racersapp.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

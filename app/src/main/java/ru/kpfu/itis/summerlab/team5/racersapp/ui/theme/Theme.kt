@@ -1,6 +1,5 @@
-package ru.kpfu.itis.summerlab.team5.shopapp.ui.theme
+package ru.kpfu.itis.summerlab.team5.racersapp.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
