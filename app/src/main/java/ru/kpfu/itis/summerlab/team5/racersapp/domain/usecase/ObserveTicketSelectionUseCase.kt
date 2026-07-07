@@ -1,6 +1,5 @@
 package ru.kpfu.itis.summerlab.team5.racersapp.domain.usecase
 
-import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.Race
 import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.TicketOffer
 import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.Wallet
 import ru.kpfu.itis.summerlab.team5.racersapp.domain.repository.RaceRepository
@@ -8,9 +7,10 @@ import ru.kpfu.itis.summerlab.team5.racersapp.domain.repository.TicketRepository
 import ru.kpfu.itis.summerlab.team5.racersapp.domain.repository.WalletRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.RaceModel
 
 data class TicketSelectionData(
-    val race: Race,
+    val race: RaceModel,
     val ticketOffers: List<TicketOffer>,
     val wallet: Wallet,
 )

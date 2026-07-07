@@ -1,5 +1,9 @@
 package ru.kpfu.itis.summerlab.team5.racersapp.ui.screen.presentation
 
+
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import ru.kpfu.itis.summerlab.team5.racersapp.R
 import ru.kpfu.itis.summerlab.team5.racersapp.ui.screen.pilot_details.domain.model.Racer
 
 data class RacerUiModel(
@@ -18,6 +22,8 @@ data class RacerUiModel(
 )
 
 object PilotDetailsUiMapper {
+
+    @Composable
     fun toUiModel(racer: Racer): RacerUiModel {
         return RacerUiModel(
             id = racer.id,
@@ -29,21 +35,23 @@ object PilotDetailsUiMapper {
             country = racer.country,
             wins = racer.wins,
             quote = racer.quote,
-            formattedAge = "${racer.age} лет",
-            formattedWins = "${racer.wins} ${getWinsSuffix(racer.wins)}",
-            formattedQuote = "«${racer.quote}»"
+            formattedAge =  stringResource(id = R.string.racer_age, racer.age),
+            formattedWins = stringResource(id = R.string.racer_wins, racer.wins, getWinsSuffix(racer.wins)),
+            formattedQuote = stringResource(id = R.string.racer_quote, racer.quote),
         )
     }
 
+    @Composable
     fun toUiModelList(racers: List<Racer>): List<RacerUiModel> {
         return racers.map { toUiModel(it) }
     }
 
+    @Composable
     private fun getWinsSuffix(wins: Int): String {
         return when {
-            wins % 10 == 1 && wins % 100 != 11 -> "подиум"
-            wins % 10 in 2..4 && (wins % 100 < 10 || wins % 100 >= 20) -> "подиума"
-            else -> "подиумов"
+            wins % 10 == 1 && wins % 100 != 11 -> stringResource(R.string.podium)
+            wins % 10 in 2..4 && (wins % 100 < 10 || wins % 100 >= 20) -> stringResource(R.string.podiuma)
+            else -> stringResource(R.string.podiumov)
         }
     }
 }

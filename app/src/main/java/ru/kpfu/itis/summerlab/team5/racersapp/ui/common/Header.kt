@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.kpfu.itis.summerlab.team5.racersapp.R
+import androidx.compose.ui.res.stringResource
 
 @Composable
 fun Header(
@@ -44,7 +45,7 @@ fun Header(
             .padding(horizontal = 16.dp),
     ) {
         Text(
-            text = "NFS",
+            text = stringResource(R.string.nfs),
             fontSize = 24.sp,
             style = TextStyle(brush = Brush.linearGradient(list)),
             modifier = Modifier.align(Alignment.Center),

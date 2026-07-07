@@ -1,11 +1,12 @@
 package ru.kpfu.itis.summerlab.team5.racersapp.domain.repository
 
-import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.TicketCategory
-import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.TicketOffer
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
+import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.TicketCategoryModel
+import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.TicketOfferModel
 
 interface TicketRepository {
-    fun observeTicketOffers(): StateFlow<List<TicketOffer>>
+    fun observeTicketOffers(): Flow<List<TicketOfferModel>>
 
-    fun purchaseTickets(selection: Map<TicketCategory, Int>)
+    fun purchaseTickets(selection: Map<TicketCategoryModel, Int>)
 }

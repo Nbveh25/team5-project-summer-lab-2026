@@ -11,11 +11,14 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import ru.kpfu.itis.summerlab.team5.racersapp.R
+import ru.kpfu.itis.summerlab.team5.racersapp.core.ResourceProvider
 
 class PilotDetailsViewModel(
     private val getAllRacersUseCase: GetAllRacersUseCase,
     private val getRacerByIdUseCase: GetRacerByIdUseCase,
-    private val initialRacerId: Int
+    private val initialRacerId: Int,
+    private val resourceProvider: ResourceProvider,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(PilotDetailsUiState())
@@ -37,7 +40,7 @@ class PilotDetailsViewModel(
                     state.copy(allRacers = racers.toUiModelList())
                 }
             } catch (e: Exception) {
-                _event.emit(ViewModelEvent.ShowError("Ошибка загрузки списка: ${e.message}"))
+                _event.emit(ViewModelEvent.ShowError(resourceProvider.getString(R.string.snackbar_error)))
             }
         }
     }
@@ -56,7 +59,7 @@ class PilotDetailsViewModel(
                 }
             } catch (e: Exception) {
                 _uiState.update { state -> state.copy(isLoading = false) }
-                _event.emit(ViewModelEvent.ShowError("Ошибка загрузки гонщика: ${e.message}"))
+                _event.emit(ViewModelEvent.ShowError(resourceProvider.getString(R.string.loading_error)))
             }
         }
     }

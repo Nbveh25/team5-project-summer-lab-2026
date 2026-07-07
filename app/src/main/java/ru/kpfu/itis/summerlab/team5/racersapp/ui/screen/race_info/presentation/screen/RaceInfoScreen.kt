@@ -27,6 +27,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -64,7 +65,7 @@ fun RaceInfoScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "Ошибка: ${uiState.message}",
+                    text = stringResource(id = R.string.error_with_message, uiState.message),
                     color = Color.Red,
                     fontSize = 16.sp,
                     textAlign = TextAlign.Center
@@ -177,10 +178,10 @@ private fun ResultsHeaderRow() {
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        HeaderCell("Поз.", Modifier.width(44.dp))
-        HeaderCell("Пилот", Modifier.weight(1f))
-        HeaderCell("Время", Modifier.width(86.dp))
-        HeaderCell("Очки", Modifier.width(52.dp))
+        HeaderCell(stringResource(id=R.string.position), Modifier.width(44.dp))
+        HeaderCell(stringResource(id=R.string.pilot), Modifier.weight(1f))
+        HeaderCell(stringResource(id=R.string.time), Modifier.width(86.dp))
+        HeaderCell(stringResource(id=R.string.score), Modifier.width(52.dp))
     }
 }
 

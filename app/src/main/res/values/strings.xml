@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">SummerPractise</string>
+    <string name="nfs">NFS</string>
+    <string name="racer_age">%1$d лет</string>
+    <string name="racer_wins">%1$d %2$s</string>
+    <string name="racer_quote">«%1$s»</string>
+    <string name="podium">подиум</string>
+    <string name="podiuma">подиума</string>
+    <string name="podiumov">подиумов</string>
+    <string name="racer_agev2">%1$d лет</string>
+    <string name="racer_winsv2">%1$d подиумов</string>
+    <string name="racer_quotev2">«%1$s»</string>
+    <string name="snackbar_error">Ошибка загрузки списка: %1$s</string>
+    <string name="loading_error">Ошибка загрузки гонщика: %1$s</string>
+    <string name="error_with_message">Ошибка: %1$s</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="position">Поз.</string>
+    <string name="pilot">Пилот</string>
+    <string name="time">Время</string>
+    <string name="score">Очки</string>
 </resources>

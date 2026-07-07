@@ -1,5 +1,8 @@
 package ru.kpfu.itis.summerlab.team5.racersapp.ui.screen.pilot_details.presentation
 
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import ru.kpfu.itis.summerlab.team5.racersapp.R
 import ru.kpfu.itis.summerlab.team5.racersapp.ui.screen.pilot_details.domain.model.Racer
 
 data class PilotDetailsUiState(
@@ -21,9 +24,12 @@ data class RacerUiModel(
     val wins: Int,
     val quote: String
 ) {
-    val formattedAge: String get() = "$age лет"
-    val formattedWins: String get() = "$wins подиумов"
-    val formattedQuote: String get() = "«$quote»"
+    val formattedAge: String @Composable
+    get() = stringResource(id = R.string.racer_agev2, age)
+    val formattedWins: String @Composable
+    get() = stringResource(id = R.string.racer_winsv2, wins)
+    val formattedQuote: String @Composable
+    get() = stringResource(id = R.string.racer_quotev2, quote)
 }
 
 

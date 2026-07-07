@@ -1,8 +1,10 @@
 package ru.kpfu.itis.summerlab.team5.racersapp.domain.repository
 
-import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.RaceDetails
+
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
+import ru.kpfu.itis.summerlab.team5.racersapp.domain.model.RaceDetailsModel
 
 interface RaceRepository {
-    fun observeRaceDetails(): StateFlow<RaceDetails>
+    fun observeRaceDetails(): Flow<RaceDetailsModel>
 }

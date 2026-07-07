@@ -17,7 +17,11 @@ fun HamburgerMenuButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Box(modifier = modifier.size(30.dp, 56.dp)) {
+    Box(modifier = modifier
+        .size(
+            30.dp,
+            56.dp)
+    ) {
         IconButton(
             onClick = onClick,
             modifier = Modifier.fillMaxSize(),

@@ -1,5 +1,6 @@
 package ru.kpfu.itis.summerlab.team5.racersapp.ui.screen.race_info.presentation.viewmodel
 
+import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ru.kpfu.itis.summerlab.team5.racersapp.ui.screen.race_info.domain.usecase.GetRaceInfoStaticUseCase
