@@ -6,7 +6,7 @@ import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.data.dataso
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.data.repository.RacerRepositoryImpl
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.domain.usecase.GetAllRacersUseCase
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.domain.usecase.GetRacerByIdUseCase
-import ru.kpfu.itis.summerlab.team5.racersapp.utils.core.ResourceProviderImp
+import ru.kpfu.itis.summerlab.team5.racersapp.utils.provider.ResourceProviderImp
 
 
 import android.content.Context

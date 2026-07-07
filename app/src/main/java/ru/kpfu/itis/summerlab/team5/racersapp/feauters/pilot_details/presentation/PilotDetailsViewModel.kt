@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import ru.kpfu.itis.summerlab.team5.racersapp.R
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.domain.usecase.GetAllRacersUseCase
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.domain.usecase.GetRacerByIdUseCase
-import ru.kpfu.itis.summerlab.team5.racersapp.utils.core.ResourceProvider
+import ru.kpfu.itis.summerlab.team5.racersapp.utils.provider.ResourceProvider
 
 class PilotDetailsViewModel(
     private val getAllRacersUseCase: GetAllRacersUseCase,
