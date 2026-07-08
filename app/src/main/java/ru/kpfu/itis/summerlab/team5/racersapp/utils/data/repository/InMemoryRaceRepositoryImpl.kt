@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team5.racersapp.utils.repository
+package ru.kpfu.itis.summerlab.team5.racersapp.utils.data.repository
 
 import  kotlinx.coroutines.flow.Flow
 
@@ -6,7 +6,6 @@ import ru.kpfu.itis.summerlab.team5.racersapp.R
 import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.repository.RaceRepository
 
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.model.PilotModel
 import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.model.RaceDetailsModel
 import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.model.RaceModel
@@ -14,7 +13,7 @@ import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.model.RaceResultModel
 import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.model.TeamModel
 
 
-class InMemoryRaceRepository : RaceRepository {
+class InMemoryRaceRepositoryImpl : RaceRepository {
     private val raceDetails = MutableStateFlow(
         RaceDetailsModel(
             race = RaceModel(

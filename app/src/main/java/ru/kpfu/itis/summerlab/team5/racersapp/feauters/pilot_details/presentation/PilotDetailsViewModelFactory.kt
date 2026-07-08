@@ -6,10 +6,10 @@ import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.data.dataso
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.data.repository.RacerRepositoryImpl
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.domain.usecase.GetAllRacersUseCase
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.domain.usecase.GetRacerByIdUseCase
-import ru.kpfu.itis.summerlab.team5.racersapp.utils.core.ResourceProviderImp
 
 
 import android.content.Context
+import ru.kpfu.itis.summerlab.team5.racersapp.utils.core.ResourceProviderImpl
 
 
 class PilotDetailsViewModelFactory(
@@ -28,7 +28,7 @@ class PilotDetailsViewModelFactory(
                     RacerRepositoryImpl(LocalRacerDataSource())
                 ),
                 initialRacerId = racerId,
-                resourceProvider = ResourceProviderImp(context.applicationContext)
+                resourceProvider = ResourceProviderImpl(context.applicationContext)
             ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")

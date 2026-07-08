@@ -1,16 +1,15 @@
-package ru.kpfu.itis.summerlab.team5.racersapp.utils.repository
+package ru.kpfu.itis.summerlab.team5.racersapp.utils.data.repository
 
 
 import kotlinx.coroutines.flow.Flow
 
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.model.TicketCategoryModel
 import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.model.TicketOfferModel
 import ru.kpfu.itis.summerlab.team5.racersapp.utils.domain.repository.TicketRepository
 
 
-class InMemoryTicketRepository : TicketRepository {
+class InMemoryTicketRepositoryImpl : TicketRepository {
     private val ticketOffers = MutableStateFlow(
         listOf(
             TicketOfferModel(
