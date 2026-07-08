@@ -1,4 +1,4 @@
-package ru.kpfu.itis.summerlab.team5.racersapp.utils.core
+package ru.kpfu.itis.summerlab.team5.racersapp.utils.provider
 import androidx.annotation.StringRes
 
 interface ResourceProvider {
