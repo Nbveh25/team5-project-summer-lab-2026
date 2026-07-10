@@ -80,7 +80,7 @@ private fun Balance(
             modifier = Modifier
                 .clip(RoundedCornerShape(100))
                 .size(20.dp)
-                .background(Color.Gray),
+                .background(Color.Black.copy(alpha = 0.58f)),
             tint = Color.Unspecified,
         )
         Text(
