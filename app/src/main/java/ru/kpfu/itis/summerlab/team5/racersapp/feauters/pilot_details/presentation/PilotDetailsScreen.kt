@@ -131,34 +131,6 @@ fun PilotDetailsScreen(
                 }
             }
         }
-
-//        AnimatedVisibility(
-//            visible = uiState.isMenuVisible,
-//            enter = fadeIn(animationSpec = tween(300)) +
-//                    slideInHorizontally(
-//                        initialOffsetX = { -it },
-//                        animationSpec = tween(300)
-//                    ),
-//            exit = fadeOut(animationSpec = tween(300)) +
-//                    slideOutHorizontally(
-//                        targetOffsetX = { -it },
-//                        animationSpec = tween(300)
-//                    )
-//        ) {
-//            Box(
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .background(Color.Black.copy(alpha = 0.5f))
-//                    .clickable { viewModel.onCloseMenu() }
-//            ) {
-//                NavigationMenu(
-//                    onClose = { viewModel.onCloseMenu() },
-//                    onRacerClick = { racer -> viewModel.onRacerClick(racer) },
-//                    onNavigateToHome = { viewModel.onNavigateToHome() },
-//                    allRacers = uiState.allRacers
-//                )
-//            }
-//        }
     }
 }
 
