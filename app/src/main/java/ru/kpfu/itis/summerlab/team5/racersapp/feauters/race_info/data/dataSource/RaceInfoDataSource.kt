@@ -3,11 +3,12 @@ package ru.kpfu.itis.summerlab.team5.racersapp.feauters.race_info.data.dataSourc
 import ru.kpfu.itis.summerlab.team5.racersapp.R
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.race_info.domain.model.RaceInfoStatic
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.race_info.domain.model.RaceResultRowStatic
+import ru.kpfu.itis.summerlab.team5.racersapp.utils.provider.ResourceProvider
 
 object RaceInfoDataSource {
-    val raceInfo: RaceInfoStatic =
+    fun getRaceInfo(resourceProvider: ResourceProvider): RaceInfoStatic =
         RaceInfoStatic(
-            title = "Бик Тиз",
+            title = resourceProvider.getString(R.string.nfs),
             balanceRub = 0,
             imageResId = R.drawable.team,
             resultRows = listOf(

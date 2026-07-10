@@ -1,7 +1,8 @@
 package ru.kpfu.itis.summerlab.team5.racersapp.feauters.race_info.domain.repository
 
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.race_info.domain.model.RaceInfoStatic
+import ru.kpfu.itis.summerlab.team5.racersapp.utils.provider.ResourceProvider
 
 interface RaceInfoStaticRepository {
-    fun getRaceInfo(): RaceInfoStatic
+    fun getRaceInfo(resourceProvider: ResourceProvider): RaceInfoStatic
 }
