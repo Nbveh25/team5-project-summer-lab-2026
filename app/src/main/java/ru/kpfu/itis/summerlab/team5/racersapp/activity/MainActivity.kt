@@ -14,7 +14,7 @@ import ru.kpfu.itis.summerlab.team5.racersapp.feauters.purchase_success.presenta
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.race_info.presentation.route.RaceInfoRoute
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.schedule_of_races.presentation.ScheduleOfRacesScreen
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.ticket_selection.presentation.TicketSelectionScreen
-
+import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.presentation.PilotDetailsScreen
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
 }
 
 private enum class AppScreen {
+    PILOT_DETAILS,
     RACE_INFO,
     SCHEDULE,
     TICKET_SELECTION,
@@ -36,11 +37,16 @@ private enum class AppScreen {
 
 @androidx.compose.runtime.Composable
 private fun RacersApp() {
-    var screen by remember { mutableStateOf(AppScreen.RACE_INFO) }
+    var screen by remember { mutableStateOf(AppScreen.PILOT_DETAILS) }
     var selectedRace by remember { mutableStateOf("Ближайшая гонка") }
     var purchaseSummary by remember { mutableStateOf<PurchaseSummary?>(null) }
 
     when (screen) {
+        AppScreen.PILOT_DETAILS -> PilotDetailsScreen(
+            racerId = 1,
+            onNavigateToHome = { screen = AppScreen.RACE_INFO },
+        )
+
         AppScreen.RACE_INFO -> RaceInfoRoute(
             onMenuClick = { screen = AppScreen.SCHEDULE },
             onBuyTicketClick = { screen = AppScreen.TICKET_SELECTION },
