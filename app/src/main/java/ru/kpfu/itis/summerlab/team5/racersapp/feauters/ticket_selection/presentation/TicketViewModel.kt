@@ -2,7 +2,6 @@ package ru.kpfu.itis.summerlab.team5.racersapp.feauters.ticket_selection.present
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.ticket_selection.domain.PurchaseTicketsUseCase
 import com.example.bigtiz.ui.screen.ticket_selection.domain.TicketPrices

@@ -33,15 +33,12 @@ import com.example.bigtiz.ui.screen.purchase_success.ViewModel.PurchaseSuccessVi
 import com.example.bigtiz.ui.screen.purchase_success.screen.PurchaseSuccessScreen
 import com.example.bigtiz.ui.screen.schedule_of_races.data.ScheduleOfRacesRepositoryImpl
 import com.example.bigtiz.ui.screen.schedule_of_races.domain.usecase.GetRacesUseCase
-import com.example.bigtiz.ui.screen.ticket_selection.TicketSelectionScreen
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.presentation.PilotDetailsScreen
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.race_info.presentation.route.RaceInfoRoute
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.schedule_of_races.ScheduleOfRacesScreen
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.schedule_of_races.presentation.viewmodel.ScheduleOfRacesViewModel
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.ticket_selection.data.FileTicketRepositoryFactory
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.ticket_selection.domain.TicketRepositoryFactory
-import ru.kpfu.itis.summerlab.team5.racersapp.feauters.ticket_selection.domain.PurchaseTicketsUseCase
-import ru.kpfu.itis.summerlab.team5.racersapp.feauters.ticket_selection.presentation.TicketViewModel
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.ticket_selection.route.TicketSelectionRoute
 
 @Composable

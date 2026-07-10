@@ -10,7 +10,7 @@ import com.example.bigtiz.ui.screen.purchase_success.presentation.PurchaseSucces
 
 class PurchaseSuccessViewModel : ViewModel() {
 
-    public var uiState by mutableStateOf(PurchaseSuccessUiState())
+    var uiState by mutableStateOf(PurchaseSuccessUiState())
         private set
 
     fun setPurchaseInfo(
