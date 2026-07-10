@@ -140,8 +140,8 @@ private fun BuyTicketButton(onClick: () -> Unit) {
             .fillMaxWidth()
             .height(86.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xFF6B6B6B).copy(alpha = 0.7f),
-            contentColor = Color(0xFFE0E0E0),
+            containerColor = Color.Black.copy(alpha = 0.55f),
+//            contentColor = Color(0xFFE0E0E0),
         ),
     ) {
         Text(

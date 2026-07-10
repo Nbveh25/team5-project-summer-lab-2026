@@ -5,5 +5,5 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 
 object AppConstants {
-    var balance by mutableIntStateOf(1450)
+    var balance by mutableIntStateOf(14500)
 }

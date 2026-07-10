@@ -3,7 +3,6 @@ package ru.kpfu.itis.summerlab.team5.racersapp.feauters.pilot_details.presentati
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,13 +43,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import ru.kpfu.itis.summerlab.team5.racersapp.R
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.draw.scale
@@ -58,12 +52,12 @@ import kotlinx.coroutines.delay
 import ru.kpfu.itis.summerlab.team5.racersapp.feauters.common.uikit.Header
 
 
-private val gradientList = listOf(Color.Gray, Color.Gray, Color.White)
+private val gradientList = listOf(Color.Black, Color.Gray, Color.White)
 
 @Composable
 fun PilotDetailsScreen(
     racerId: Int,
-
+    onMenuClick: () -> Unit = {},
     onNavigateToHome: () -> Unit = {}
 ) {
     val viewModel: PilotDetailsViewModel = viewModel(
@@ -128,41 +122,13 @@ fun PilotDetailsScreen(
                     verticalArrangement = Arrangement.spacedBy(10.dp),
                 ) {
                     PilotDetailsTopBar(
-                        onMenuClick = { viewModel.onMenuClick() }
+                        onMenuClick = onMenuClick
                     )
 
                     uiState.currentRacer?.let { racerUi ->
                         PhotoAndDescription(racer = racerUi)
                     }
                 }
-            }
-        }
-
-        AnimatedVisibility(
-            visible = uiState.isMenuVisible,
-            enter = fadeIn(animationSpec = tween(300)) +
-                    slideInHorizontally(
-                        initialOffsetX = { -it },
-                        animationSpec = tween(300)
-                    ),
-            exit = fadeOut(animationSpec = tween(300)) +
-                    slideOutHorizontally(
-                        targetOffsetX = { -it },
-                        animationSpec = tween(300)
-                    )
-        ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.Black.copy(alpha = 0.5f))
-                    .clickable { viewModel.onCloseMenu() }
-            ) {
-                NavigationMenu(
-                    onClose = { viewModel.onCloseMenu() },
-                    onRacerClick = { racer -> viewModel.onRacerClick(racer) },
-                    onNavigateToHome = { viewModel.onNavigateToHome() },
-                    allRacers = uiState.allRacers
-                )
             }
         }
     }
@@ -249,7 +215,7 @@ private fun PhotoAndDescription(racer: RacerUiModel) {
                 .padding(horizontal = 20.dp)
                 .height(250.dp)
                 .clip(RoundedCornerShape(16.dp))
-                .background(Color.Gray.copy(alpha = 0.3f)),
+                .background(Color.Black.copy(alpha = 0.58f)),
             contentAlignment = Alignment.Center
         ) {
             RacerImage(racer)
